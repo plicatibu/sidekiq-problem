@@ -1,0 +1,10 @@
+:verbose: true
+:pidfile: ./tmp/pids/sidekiq.pid
+:concurrency: 25
+:url: redis://localhost:6379/0
+# Set timeout to 8 on Heroku, longer if you manage your own systems.
+:timeout: 30
+:queues:
+  - [critical, 3]
+  - [default, 2]
+  - [low, 1]
